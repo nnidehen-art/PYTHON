@@ -1,0 +1,12 @@
+import turtle
+import random
+screen=turtle.Screen()
+colors=['red','black','orange','purple','maroon']
+#user define function.
+def screenColor(x,y):
+    c=random.choice(colors)
+    screen.bgcolor(c)
+
+screen.onclick(screenColor)
+turtle.done()
+
