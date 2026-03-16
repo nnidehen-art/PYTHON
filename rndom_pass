@@ -1,0 +1,33 @@
+import random
+import time
+import os
+symbol=["`","¬","!",".",",","<",">","£","$","%","^","&","*","(",")","_","-"]
+lowercase=["q","w","e","r","t","y","u","i","o","p","a","s","d","f","g","h","j","k","l","z","x","c","v","b","n","m"]
+uppercase=["Q","W","E","R","T","Y","U","I","O","P","A","S","D","F","G","H","J","K","L","Z","X","C","V","B","N","M"]
+
+def pas_generator():
+    a=random.choice(uppercase)
+    b=random.choice(lowercase)
+    c=random.choice(symbol)
+    d=random.choice(uppercase)
+    e=random.choice(uppercase)
+    f=random.choice(lowercase)
+    g=random.choice(lowercase)
+    h=str(random.randint(1,10))
+
+    password=a+b+f+c+d+e+g+h
+
+    print("Your password is: ")
+    print(password)
+    time.sleep(5)
+
+    os.system("cls")
+
+while True:
+    pas_generator()
+    choice=input("Do you want another password: \n")
+    if choice == "y" or choice == 'yes':
+       pas_generator()
+    else:
+        print("Thanks for using our app") 
+        break
