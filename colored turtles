@@ -1,0 +1,51 @@
+import turtle
+tg=turtle.Turtle()
+tb=turtle.Turtle()
+ty=turtle.Turtle()
+
+tg.shape('turtle')
+tb.shape('turtle')
+ty.shape('turtle')
+
+screen=turtle.Screen()
+screen.bgcolor('black')
+
+tg.color('green')
+tb.color('blue')
+ty.color('yellow')
+
+ty.speed(10)
+tb.write('Start ',font=('Courier',32,'bold'), align =('right'))
+tb.write('Nosa ',font=('Courier',32,'bold'), align =('right'))
+x=int(input('Enter the steps you want your turtle to move: '))
+
+def go_forward():
+    tg.forward(x)
+
+def go_up():
+    tg.setheading(90)
+
+def go_down():
+    tg.setheading(270)
+
+def go_right():
+    tg.setheading(360)
+
+def go_left():
+    tg.setheading(180)
+
+def on_click(x,y):
+    screen.tracer(0)
+    tg.setheading(tg.towards(x,y))
+    tg.goto(x,y)
+    screen.tracer(1)
+    print(t.pos())
+
+def on_drag(x,y):
+    screen.tracer(0)
+    tg.goto(x,y)
+    screen.tracer(1)
+
+#linking the keys with the fuctions
+
+turtle.done()
