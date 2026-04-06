@@ -16,7 +16,7 @@ ty.color('yellow')
 
 ty.speed(10)
 tb.write('Start ',font=('Courier',32,'bold'), align =('right'))
-tb.write('Nosa ',font=('Courier',32,'bold'), align =('right'))
+tb.write('Nosa ',font=('Courier',32,'bold'), align =('left'))
 x=int(input('Enter the steps you want your turtle to move: '))
 
 def go_forward():
@@ -39,7 +39,7 @@ def on_click(x,y):
     tg.setheading(tg.towards(x,y))
     tg.goto(x,y)
     screen.tracer(1)
-    print(t.pos())
+    print(tg.pos())
 
 def on_drag(x,y):
     screen.tracer(0)
@@ -47,5 +47,24 @@ def on_drag(x,y):
     screen.tracer(1)
 
 #linking the keys with the fuctions
+screen.listen()
+screen.onkey(go_forward,'space')
+screen.onkey(go_up,'w')
+screen.onkey(go_down,'s')
+screen.onkey(go_right,'d')
+screen.onkey(go_left,'a')
+screen.onclick(on_click)
+tg.ondrag(on_drag)
+
+tb.goto(50,90)
+
+for x in range(100):
+    ty.forward(100)
+    ty.right(36)
+    ty.backward(100)
+    ty.forward(100)
+    ty.right(50)
+    ty.right(90)
+    ty.backward(20)
 
 turtle.done()
