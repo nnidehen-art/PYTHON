@@ -1,0 +1,28 @@
+import turtle
+import random
+
+
+screen=turtle.Screen()
+screen.bgcolor('black')
+
+#creating user turtle
+user=turtle.Turtle()
+user.color('red')
+user.shape('turtle')
+user.penup()
+user.goto(-400,200)
+
+#funtion to move the turtle
+def move_right():
+    x=user.xcor()
+    if x < 305:
+        user.setx(x+20)
+
+#keyboard events
+screen.listen()
+screen.onkey(move_right,'Right')
+
+
+
+
+turtle.done()
